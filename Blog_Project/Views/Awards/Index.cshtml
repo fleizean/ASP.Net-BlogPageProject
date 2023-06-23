@@ -1,0 +1,57 @@
+﻿@using EntityLayer.Concrete
+@model List<Awards>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="card">
+            <div class="table-responsive text-nowrap">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ödül Başlığı</th>
+                            <th>Başarı</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td><strong></strong>@item.AwardsID</td>
+                                <td>@item.Name</td>
+                                @if (item.GradePlace == "1")
+                                {
+                                    <td style="color: gold">@item.GradePlace</td>
+                                }
+                                else if (item.GradePlace == "2")
+                                {
+                                    <td style="color: seagreen">@item.GradePlace</td>
+                                }
+                                else
+                                {
+                                    <td style="color: darkviolet">@item.GradePlace</td>
+                                }
+                                <td><a href="/Awards/DeleteAwards/@item.AwardsID" class="btn btn-outline-danger" onclick="return confirm('Gerçekten silmek istiyor musunuz?')"><span class="tf-icons bx bx-error-alt"></span>&nbsp; Sil</a></td>
+                                <td><a href="/Awards/EditAwards/@item.AwardsID" class="btn btn-outline-success"><span class="tf-icons bx bx-pencil"></span>&nbsp; Güncelle</a></td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <br />
+    <div style="text-align: left;">
+        <a href="/Awards/AddAwards/" class="btn btn-outline-info">
+            <span class="tf-icons bx bx-clipboard"></span>&nbsp; Ödül &amp; Sertifika Ekle
+        </a>
+    </div>
+</div>

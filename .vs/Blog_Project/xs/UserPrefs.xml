@@ -1,0 +1,43 @@
+﻿<Properties StartupConfiguration="{F808CA78-45F2-407D-8C94-3CD8C1875650}|Default">
+  <MonoDevelop.Ide.ItemProperties.Blog__Project PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Blog_Project/Views/Experience/Index.cshtml">
+    <Files>
+      <File FileName="Blog_Project/Views/Shared/_AdminLayout.cshtml" />
+      <File FileName="Blog_Project/Views/Experience/Index.cshtml" Line="41" Column="159" />
+      <File FileName="DataAccessLayer/Repository/GenericRepository.cs" Line="15" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Blog_Project" expanded="True">
+            <Node name="Blog_Project" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="About" expanded="True" />
+                <Node name="Dashboard" expanded="True" />
+                <Node name="Experience" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
+                <Node name="Shared" expanded="True">
+                  <Node name="Components" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="BusinessLayer" expanded="True">
+              <Node name="Concrete" expanded="True" />
+            </Node>
+            <Node name="DataAccessLayer" expanded="True">
+              <Node name="Repository" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

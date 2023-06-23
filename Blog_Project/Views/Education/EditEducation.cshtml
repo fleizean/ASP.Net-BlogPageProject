@@ -1,0 +1,50 @@
+﻿@model EntityLayer.Concrete.Education
+
+@{
+    ViewData["Title"] = "EditEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card mb-4">
+        <h5 class="card-header">Eğitim Yeri Düzenleme Paneli</h5>
+        <div class="card-body">
+            <form class="forms-sample" method="post">
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">ID</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.EducationID, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">Eğitim Yeri</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.EducationTitle, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-search-input" class="col-md-2 col-form-label">Eğitim Alanı</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.EducationPlace, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-email-input" class="col-md-2 col-form-label">Tarih</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-email-input" class="col-md-2 col-form-label">Açıklama</label>
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(x => x.Description, 8, 3, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="button-class" style="margin-top: 30px">
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Index", "Education")'">İptal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

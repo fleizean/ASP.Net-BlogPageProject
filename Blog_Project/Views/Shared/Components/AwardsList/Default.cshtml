@@ -1,0 +1,28 @@
+﻿@using EntityLayer.Concrete
+@model List<Awards>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+        <div class="my-auto">
+            <h2 class="mb-5">Ödüller &amp; Sertifikalar</h2>
+            <ul class="fa-ul mb-0">
+                @foreach (var item in Model)
+                    {
+                        @if (item.GradePlace == null)
+                            {
+                <li>
+                    <i class="fa-li fa fa-trophy text-warning"></i>
+                    @item.Name
+                </li>
+                            }
+                            else
+                            {
+            <li>
+                <i class="fa-li fa fa-trophy text-warning"></i>
+                @item.GradePlace<sup>.</sup>
+                @item.Name
+            </li>
+                                }
+                            }
+            </ul>
+        </div>
+    </section>

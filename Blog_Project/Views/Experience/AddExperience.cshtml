@@ -1,0 +1,68 @@
+﻿@model EntityLayer.Concrete.Experience
+
+@{
+    ViewData["Title"] = "AddExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@* <div class="container-xxl flex-grow-1 container-p-y">
+
+        <div class="row">
+            <div class="demo-vertical-spacing demo-only-element col-md-8 ">
+                <form class="forms-sample" method="post">
+                    <div class="input-group input-group-merge">
+                        @Html.TextBoxFor(x => x.JobTitle, new { @class = "form-control" })
+                    </div>
+                    <div class="input-group input-group-merge">
+                        @Html.TextBoxFor(x => x.WorkPlace, new { @class = "form-control" })
+                    </div>
+                    <div class="input-group input-group-merge">
+                        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                    </div>
+                    <div class="input-group input-group-merge">
+                        @Html.TextAreaFor(x => x.Description, 8, 3, new { @class = "form-control" })
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Index", "Experience")'">İptal</button>
+                </form>
+            </div>
+        </div>
+    </div> *@
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card mb-4">
+        <h5 class="card-header">Deneyim Ekleme Paneli</h5>
+        <div class="card-body">
+            <form class="forms-sample" method="post">
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">İş Sıfatı</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.JobTitle, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-search-input" class="col-md-2 col-form-label">İş Yeri</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.WorkPlace, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-email-input" class="col-md-2 col-form-label">Tarih</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-email-input" class="col-md-2 col-form-label">Açıklama</label>
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(x => x.Description, 8, 3, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="button-class" style="margin-top: 30px">
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Index", "Experience")'">İptal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

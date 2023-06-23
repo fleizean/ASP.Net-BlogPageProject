@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Html.PartialAsync("HeaderPartial")
+
+<body id="page-top">
+
+    @await Html.PartialAsync("NavbarPartial")
+
+    <div class="container-fluid p-0">
+
+        @await Component.InvokeAsync("AboutList")
+
+        <hr class="m-0">
+
+        @await Component.InvokeAsync("ExperienceList")
+
+        <hr class="m-0">
+
+        @await Component.InvokeAsync("EducationList")
+
+        <hr class="m-0">
+
+        @await Component.InvokeAsync("SkillList")
+
+        <hr class="m-0">
+
+        @await Component.InvokeAsync("InterestsList")
+
+        <hr class="m-0">
+
+        @await Component.InvokeAsync("AwardsList")
+
+    </div>
+
+    <script src="~/startbootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="~/startbootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/startbootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/startbootstrap/js/resume.min.js"></script>
+
+</body>
+
+</html>
+
+

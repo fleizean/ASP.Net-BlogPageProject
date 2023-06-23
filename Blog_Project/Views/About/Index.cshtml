@@ -1,0 +1,135 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card mb-4">
+        <h5 class="card-header">Hakkımda Düzenleme Paneli</h5>
+        <div class="card-body">
+            <form class="forms-sample" method="post">
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">ID</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.AboutID, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">Ad</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">Soyad</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">Kısa Adres</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.ShortAddress, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">Uzun Adres</label>
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(x => x.LongAddress, 2, 3, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">Telefon</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.Telephone, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">Email</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">Açıklama</label>
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(x => x.Description, 7, 3, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="button-class" style="margin-top: 30px">
+                    <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                    <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Index", "Dashboard")'">İptal</button>
+                </div>
+           </form>
+        </div>
+    </div>
+</div>
+@*
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <div class="row">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form class="forms-sample" method="post">
+                        <div class="mb-3 row">
+                            <label for="html5-text-input" class="col-md-2 col-form-label">ID</label>
+                            <div class="col-md-10">
+                                <input class="form-control" readonly="true" type="text" value="@Model.AboutID" id="AboutID" name="AboutID" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="html5-text-input" class="col-md-2 col-form-label">Ad</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" value="@Model.Name" id="Name" name="Name" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="html5-text-input" class="col-md-2 col-form-label">Soyad</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" value="@Model.Surname" id="Surname" name="Surname" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="html5-text-input" class="col-md-2 col-form-label">Kısa Adres</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" value="@Model.ShortAddress" id="ShortAddress" name="ShortAddress" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="html5-text-input" class="col-md-2 col-form-label">Uzun Adres</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" value="@Model.LongAddress" id="LongAddress" name="LongAddress" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="html5-text-input" class="col-md-2 col-form-label">Telefon</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" value="@Model.Telephone" id="Telephone" name="Telephone" />
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label for="html5-email-input" class="col-md-2 col-form-label">Email</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="email" value="@Model.Email" id="Email" name="Email" />
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label for="exampleFormControlTextarea1" class="form-label">Açıklama</label>
+                            <textarea class="form-control" id="Description" name="Description" rows="3">@Model.Description</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-outline-success">
+                            <span class="tf-icons bx bx-pencil"></span>&nbsp; Güncelle
+                        </button>
+
+                        <button type="button" class="btn btn-outline-danger" onclick="location.href='@Url.Action("Index", "Dashboard")'">
+                            <span class="tf-icons bx bx-exit"></span>&nbsp; İptal
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+*@

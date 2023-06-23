@@ -1,0 +1,21 @@
+﻿@using EntityLayer.Concrete
+@model List<Skills>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+        <div class="my-auto">
+
+            <h2 class="mb-5">Yeteneklerim</h2>
+
+            <div class="subheading mb-3">Programlama Dilleri &amp; Araçlar</div>
+            
+            <ul class="list-inline dev-icons">
+                @foreach (var item in Model)
+                {
+                    <li class="list-inline-item">
+                        <i class="@item.Name"></i>
+                    </li>
+                    }
+                </ul>
+           
+        </div>
+    </section>

@@ -1,0 +1,83 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.12">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Default\" />
+    <None Remove="ViewComponents\" />
+    <None Remove="ViewComponents\About\" />
+    <None Remove="ViewComponents\Experience\" />
+    <None Remove="ViewComponents\Education\" />
+    <None Remove="ViewComponents\Skill\" />
+    <None Remove="ViewComponents\Interests\" />
+    <None Remove="ViewComponents\Awards\" />
+    <None Remove="ViewComponents\SocialMedia\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\AboutList\" />
+    <None Remove="Views\Shared\Components\AwardsList\" />
+    <None Remove="Views\Shared\Components\EducationList\" />
+    <None Remove="Views\Shared\Components\SkillList\" />
+    <None Remove="Views\Shared\Components\InterestsList\" />
+    <None Remove="Views\Shared\Components\ExperienceList\" />
+    <None Remove="Views\Dashboard\" />
+    <None Remove="Views\About\" />
+    <None Remove="Views\Experience\" />
+    <None Remove="Views\Education\" />
+    <None Remove="Views\Skill\" />
+    <None Remove="Views\Interest\" />
+    <None Remove="Views\Awards\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Default\" />
+    <Folder Include="ViewComponents\" />
+    <Folder Include="ViewComponents\About\" />
+    <Folder Include="ViewComponents\Experience\" />
+    <Folder Include="ViewComponents\Education\" />
+    <Folder Include="ViewComponents\Skill\" />
+    <Folder Include="ViewComponents\Interests\" />
+    <Folder Include="ViewComponents\Awards\" />
+    <Folder Include="ViewComponents\SocialMedia\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\AboutList\" />
+    <Folder Include="Views\Shared\Components\AwardsList\" />
+    <Folder Include="Views\Shared\Components\EducationList\" />
+    <Folder Include="Views\Shared\Components\SkillList\" />
+    <Folder Include="Views\Shared\Components\InterestsList\" />
+    <Folder Include="Views\Shared\Components\ExperienceList\" />
+    <Folder Include="Views\Dashboard\" />
+    <Folder Include="Views\About\" />
+    <Folder Include="Views\Experience\" />
+    <Folder Include="Views\Education\" />
+    <Folder Include="Views\Skill\" />
+    <Folder Include="Views\Interest\" />
+    <Folder Include="Views\Awards\" />
+  </ItemGroup>
+</Project>
