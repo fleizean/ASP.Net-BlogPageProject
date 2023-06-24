@@ -54,6 +54,9 @@
     <None Remove="Views\Skill\" />
     <None Remove="Views\Interest\" />
     <None Remove="Views\Awards\" />
+    <None Remove="Views\Register\" />
+    <None Remove="Views\Login\" />
+    <None Remove="Views\ErrorPage\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Default\" />
@@ -79,5 +82,12 @@
     <Folder Include="Views\Skill\" />
     <Folder Include="Views\Interest\" />
     <Folder Include="Views\Awards\" />
+    <Folder Include="Views\Register\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="wwwroot\userimage\" />
+    <Folder Include="Views\ErrorPage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\userimage\" />
   </ItemGroup>
 </Project>
