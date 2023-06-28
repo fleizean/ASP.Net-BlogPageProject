@@ -18,10 +18,12 @@ namespace Blog_Project.Models
         [Required(ErrorMessage = "Lütfen Şifreyi Girin")]
         public string Password { get; set; }
         [Required(ErrorMessage = "Lütfen Şifreyi Tekrar Girin")]
-        [Compare("Password", ErrorMessage = "Şifreler Uyumlu Değil!")]
+        [Compare("Password", ErrorMessage = "Şifreler Uyumlu Değil")]
         public string ConfirmPassword { get; set; }
         [Required(ErrorMessage = "Lütfen Maili Girin")]
         public string Mail { get; set; }
+        [Range(typeof(bool), "true", "true", ErrorMessage = "Lütfen Gizlilik Sözleşmesini Kabul Edin.")]
+        public bool Privacy { get; set; }
     }
 }
 

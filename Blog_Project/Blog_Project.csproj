@@ -57,6 +57,7 @@
     <None Remove="Views\Register\" />
     <None Remove="Views\Login\" />
     <None Remove="Views\ErrorPage\" />
+    <None Remove="Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Default\" />
@@ -86,6 +87,7 @@
     <Folder Include="Views\Login\" />
     <Folder Include="wwwroot\userimage\" />
     <Folder Include="Views\ErrorPage\" />
+    <Folder Include="Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\userimage\" />

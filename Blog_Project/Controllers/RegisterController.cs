@@ -31,13 +31,21 @@ namespace Blog_Project.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(UserRegisterViewModel p)
         {
+            if (p.Picture == null || string.IsNullOrEmpty(p.Picture.FileName))
+            {
+                ModelState.AddModelError("Picture", "Resim alanı boş olamaz.");
+                return View(p);
+            }
+
             var resource = Directory.GetCurrentDirectory();
             var extension = Path.GetExtension(p.Picture.FileName);
             var imagename = Guid.NewGuid() + extension;
             var savelocation = resource + "/wwwroot/userimage/" + imagename;
+
             var stream = new FileStream(savelocation, FileMode.Create);
             await p.Picture.CopyToAsync(stream);
             p.ImageUrl = imagename;
+
             AdminUser w = new AdminUser()
             {
                 Name = p.Name,
@@ -46,6 +54,12 @@ namespace Blog_Project.Controllers
                 UserName = p.UserName,
                 ImageUrl = imagename,
             };
+
+            if (string.IsNullOrEmpty(p.Password) || string.IsNullOrEmpty(p.ConfirmPassword))
+            {
+                ModelState.AddModelError("", "Şifre alanı boş olamaz.");
+                return View(p);
+            }
 
             if (p.Password == p.ConfirmPassword)
             {
@@ -63,6 +77,11 @@ namespace Blog_Project.Controllers
                     }
                 }
             }
+            else
+            {
+                ModelState.AddModelError("", "Şifre ve şifre tekrarı eşleşmiyor.");
+            }
+
             return View(p);
         }
     }

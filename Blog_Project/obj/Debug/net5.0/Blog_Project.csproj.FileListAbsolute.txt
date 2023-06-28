@@ -114,3 +114,4 @@
 /Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/obj/Debug/net5.0/Razor/Views/ErrorPage/Error404.cshtml.g.cs
 /Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/obj/Debug/net5.0/Razor/Views/ErrorPage/Error500.cshtml.g.cs
 /Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/obj/Debug/net5.0/Razor/Views/ErrorPage/Index.cshtml.g.cs
+/Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/obj/Debug/net5.0/Razor/Views/Profile/Index.cshtml.g.cs
