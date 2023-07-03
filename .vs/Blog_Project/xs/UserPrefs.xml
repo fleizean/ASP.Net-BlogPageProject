@@ -1,16 +1,9 @@
 ﻿<Properties StartupConfiguration="{F808CA78-45F2-407D-8C94-3CD8C1875650}|Default">
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Blog__Project PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="Blog_Project/Views/Profile/Index.cshtml">
     <Files>
-      <File FileName="Blog_Project/Controllers/ProfileController.cs" Line="1" Column="1" />
-      <File FileName="Blog_Project/Views/Profile/Index.cshtml" Line="219" Column="1" />
-      <File FileName="Blog_Project/Views/Education/Index.cshtml" Line="9" Column="1" />
+      <File FileName="Blog_Project/Controllers/ProfileController.cs" />
+      <File FileName="Blog_Project/Views/Profile/Index.cshtml" Line="113" Column="101" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -45,4 +38,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
