@@ -115,8 +115,8 @@
                             <p class="mb-0">Eğer hesabını silersen, bunun bir geri dönüşü olmayacak. Lüfen bunlara göre karar veriniz.</p>
                         </div>
                     </div>
-                    <form class="forms-sample" method="post" enctype="multipart/form-data">
-                        <button type="submit" class="btn btn-danger deactivate-account">Hesabımı Sil</button>
+                    <form class="forms-sample" method="post" enctype="multipart/form-data" asp-controller="Profile" asp-action="DeleteAccountConfirmation">
+                        <button type="submit" class="btn btn-danger deactivate-account" onclick="return confirm('Gerçekten silmek istiyor musunuz?')">Hesabımı Sil</button>
                     </form>
                 </div>
             </div>

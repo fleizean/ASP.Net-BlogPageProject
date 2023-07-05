@@ -39,7 +39,7 @@
                 <div class="mb-3 row">
                     <label for="html5-text-input" class="col-md-2 col-form-label">Ödül Başlığı</label>
                     <div class="col-md-10">
-                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                        @Html.DropDownListFor(x => x.Name, new SelectList(new List<string> { "", "1", "2", "3", "4", "5"}), new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="mb-3 row">

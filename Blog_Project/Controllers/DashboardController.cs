@@ -23,14 +23,30 @@ namespace Blog_Project.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            /*var values = await _userManager.FindByNameAsync(User.Identity.Name);
-            ViewBag.v1 = values.ImageUrl;*/
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            ViewBag.v1 = values.Name;
+            int ratio = 4;
+
+            ratio -= String.IsNullOrEmpty(values.Name) ? 1 : 0;
+            ratio -= String.IsNullOrEmpty(values.Surname) ? 1 : 0;
+            ratio -= String.IsNullOrEmpty(values.Email) ? 1 : 0;
+            ratio -= String.IsNullOrEmpty(values.ImageUrl) ? 1 : 0;
+
+            if (ratio * 25 == 100)
+            {
+                ViewBag.v2 = "0";
+                ViewBag.v3 = "Profilini tekrar düzenlemek için aşağıdaki butonu kullan!";
+            }
+            else
+            {
+                ViewBag.v2 = 100 - (ratio * 25);
+                ViewBag.v3 = "Profilindeki düzenlenmemiş alanları kontrol etmek için aşağıdaki butonu kullan!";
+            }
+            
             return View();
         }
-
-
     }
 }
 

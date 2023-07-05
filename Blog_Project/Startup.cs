@@ -52,7 +52,7 @@ namespace Blog_Project
             services.ConfigureApplicationCookie(options =>
             {
                 options.Cookie.HttpOnly = true;
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // 10 dakika sonra authenticatei dolacak
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(10); // 10 dakika sonra authenticatei dolacak
                 options.AccessDeniedPath = "/ErrorPage/Index/";
                 options.LoginPath = "/Login/";
             });

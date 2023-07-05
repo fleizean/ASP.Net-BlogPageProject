@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Blog_Project.Models;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 /*  using MailKit.Net.Smtp;
@@ -49,7 +50,17 @@ namespace Blog_Project.Controllers
 				var savelocation = resource + "/wwwroot/userimage/" + imagename;
 				var stream = new FileStream(savelocation, FileMode.Create);
 				await p.Picture.CopyToAsync(stream);
-				user.ImageUrl = imagename;
+
+                if (!string.IsNullOrEmpty(user.ImageUrl)) // image önceden mevcutsa silinecek
+                {
+                    var existingImagePath = Path.Combine(resource, "wwwroot/userimage", user.ImageUrl);
+                    if (System.IO.File.Exists(existingImagePath))
+                    {
+                        System.IO.File.Delete(existingImagePath);
+                    }
+                }
+
+                user.ImageUrl = imagename;
                 
 
                 user.Name = string.IsNullOrEmpty(p.Name) ? user.Name : p.Name;
@@ -124,7 +135,7 @@ namespace Blog_Project.Controllers
                         smtp.Send(email);
                         smtp.Disconnect(true);
                     }*/
-                    return RedirectToAction("Index", "Dashboard");
+                    return RedirectToAction("Index", "LogOut");
                 }
                 else
                 {
