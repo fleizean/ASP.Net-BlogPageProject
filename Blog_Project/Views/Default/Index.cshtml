@@ -13,27 +13,34 @@
 
     <div class="container-fluid p-0">
 
-        @await Component.InvokeAsync("AboutList")
+        <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+            <div class="my-auto">
 
-        <hr class="m-0">
+                @await Component.InvokeAsync("AboutList")
 
-        @await Component.InvokeAsync("ExperienceList")
+                @await Component.InvokeAsync("SocialMediaList")
+                </div>
+        </section>
 
-        <hr class="m-0">
+            <hr class="m-0">
 
-        @await Component.InvokeAsync("EducationList")
+            @await Component.InvokeAsync("ExperienceList")
 
-        <hr class="m-0">
+            <hr class="m-0">
 
-        @await Component.InvokeAsync("SkillList")
+            @await Component.InvokeAsync("EducationList")
 
-        <hr class="m-0">
+            <hr class="m-0">
 
-        @await Component.InvokeAsync("InterestsList")
+            @await Component.InvokeAsync("SkillList")
 
-        <hr class="m-0">
+            <hr class="m-0">
 
-        @await Component.InvokeAsync("AwardsList")
+            @await Component.InvokeAsync("InterestsList")
+
+            <hr class="m-0">
+
+            @await Component.InvokeAsync("AwardsList")
 
     </div>
 

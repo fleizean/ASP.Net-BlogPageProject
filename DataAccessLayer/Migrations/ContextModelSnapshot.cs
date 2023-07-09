@@ -266,6 +266,9 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
 

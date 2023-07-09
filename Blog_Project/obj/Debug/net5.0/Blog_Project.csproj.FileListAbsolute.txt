@@ -122,3 +122,7 @@
 /Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/bin/Debug/net5.0/System.Runtime.CompilerServices.Unsafe.dll
 /Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/bin/Debug/net5.0/System.Security.Cryptography.Pkcs.dll
 /Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/bin/Debug/net5.0/System.Text.Encoding.CodePages.dll
+/Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/obj/Debug/net5.0/Razor/Views/Shared/Components/SocialMediaList/Default.cshtml.g.cs
+/Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/obj/Debug/net5.0/Razor/Views/SocialMedia/AddSocialMedia.cshtml.g.cs
+/Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/obj/Debug/net5.0/Razor/Views/SocialMedia/EditSocialMedia.cshtml.g.cs
+/Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/obj/Debug/net5.0/Razor/Views/SocialMedia/Index.cshtml.g.cs

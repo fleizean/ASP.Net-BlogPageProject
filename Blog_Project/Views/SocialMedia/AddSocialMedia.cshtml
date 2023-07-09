@@ -1,0 +1,68 @@
+﻿@model EntityLayer.Concrete.SocialMedia
+
+@{
+    ViewData["Title"] = "AddSocialMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{
+    var icons = new List<SelectListItem>
+    {
+        new SelectListItem { Value = "fab fa-facebook", Text = "Facebook" },
+        new SelectListItem { Value = "fab fa-twitter", Text = "Twitter" },
+        new SelectListItem { Value = "fab fa-instagram", Text = "Instagram" },
+        new SelectListItem { Value = "fab fa-linkedin", Text = "LinkedIn" },
+        new SelectListItem { Value = "fab fa-youtube", Text = "YouTube" },
+        new SelectListItem { Value = "fab fa-pinterest", Text = "Pinterest" },
+        new SelectListItem { Value = "fab fa-twitch", Text = "Twitch" },
+        new SelectListItem { Value = "fab fa-vimeo", Text = "Vimeo" },
+        new SelectListItem { Value = "fab fa-soundcloud", Text = "SoundCloud" },
+        new SelectListItem { Value = "fab fa-telegram", Text = "Telegram" },
+        new SelectListItem { Value = "fab fa-steam", Text = "Steam" },
+        new SelectListItem { Value = "fab fa-slack", Text = "Slack" },
+        new SelectListItem { Value = "fab fa-tumblr", Text = "Tumblr" },
+        new SelectListItem { Value = "fab fa-reddit", Text = "Reddit" },
+        new SelectListItem { Value = "fab fa-vk", Text = "VK" },
+        new SelectListItem { Value = "fab fa-dribbble", Text = "Dribbble" },
+        new SelectListItem { Value = "fab fa-behance", Text = "Behance" },
+        new SelectListItem { Value = "fab fa-flickr", Text = "Flickr" }
+    };
+
+    var status = new List<SelectListItem>
+    {
+        new SelectListItem { Value = "True", Text = "Aktif" },
+        new SelectListItem { Value = "False", Text = "Pasif" }
+    };
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card mb-4">
+        <h5 class="card-header">Sosyal Medya Ekleme Paneli</h5>
+        <div class="card-body">
+            <form class="forms-sample" method="post">
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">Başlık</label>
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(x => x.Name, new SelectList(icons, "Value", "Text"), new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-search-input" class="col-md-2 col-form-label">Url</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="html5-text-input" class="col-md-2 col-form-label">Durum</label>
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(x => x.Status, new SelectList(status, "Value", "Text"), new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="button-class" style="margin-top: 30px">
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Index", "SocialMedia")'">İptal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

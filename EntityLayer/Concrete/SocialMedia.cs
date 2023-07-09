@@ -9,6 +9,7 @@ namespace EntityLayer.Concrete
         public int SocialMediaID { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
+        public bool Status { get; set; }
     }
 }
 

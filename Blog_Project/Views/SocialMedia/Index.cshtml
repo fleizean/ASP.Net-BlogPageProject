@@ -1,0 +1,52 @@
+﻿@using EntityLayer.Concrete
+@model List<SocialMedia>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card">
+        <div class="table-responsive text-nowrap">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Başlık</th>
+                        <th>Url</th>
+                        <th>Durum</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><strong></strong>@item.SocialMediaID</td>
+                            <td>@item.Name</td>
+                            <td style="color:blueviolet"><a href="@item.Url" target="_blank">Tıkla</a></td>
+                            @if (item.Status == true)
+                            {
+                                <td><span class="label label-success" style="color:green; font-weight:bold">Aktif</span></td>
+                            }
+                            else
+                            {
+                                <td><span class="label label-warning" style="color: red; font-weight: bold">Pasif</span></td>
+                            }
+                            <td><a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaID" class="btn btn-outline-danger" onclick="return confirm('Gerçekten silmek istiyor musunuz?')"><span class="tf-icons bx bx-error-alt"></span>&nbsp; Sil</a></td>
+                            <td><a href="/SocialMedia/EditSocialMedia/@item.SocialMediaID" class="btn btn-outline-success"><span class="tf-icons bx bx-pencil"></span>&nbsp; Güncelle</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <br />
+    <div style="text-align: left;">
+        <a href="/SocialMedia/AddSocialMedia/" class="btn btn-outline-info">
+            <span class="tf-icons bx bx-clipboard"></span>Sosyal Medya Ekle
+        </a>
+    </div>
+</div>

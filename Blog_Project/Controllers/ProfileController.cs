@@ -115,6 +115,15 @@ namespace Blog_Project.Controllers
                 var result = await _userManager.DeleteAsync(user);
                 if (result.Succeeded)
 				{
+                    var resource = Directory.GetCurrentDirectory();
+                    if (!string.IsNullOrEmpty(user.ImageUrl)) // image önceden mevcutsa silinecek
+                    {
+                        var existingImagePath = Path.Combine(resource, "wwwroot/userimage", user.ImageUrl);
+                        if (System.IO.File.Exists(existingImagePath))
+                        {
+                            System.IO.File.Delete(existingImagePath);
+                        }
+                    }
                     /*var email = new MimeMessage();
 
                     email.From.Add(new MailboxAddress("Blog Project", ""));

@@ -59,6 +59,8 @@
     <None Remove="Views\Login\" />
     <None Remove="Views\ErrorPage\" />
     <None Remove="Views\Profile\" />
+    <None Remove="Views\Shared\Components\SocialMediaList\" />
+    <None Remove="Views\SocialMedia\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Default\" />
@@ -89,6 +91,8 @@
     <Folder Include="wwwroot\userimage\" />
     <Folder Include="Views\ErrorPage\" />
     <Folder Include="Views\Profile\" />
+    <Folder Include="Views\Shared\Components\SocialMediaList\" />
+    <Folder Include="Views\SocialMedia\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\userimage\" />
