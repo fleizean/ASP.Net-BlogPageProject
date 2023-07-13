@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Blog_Project.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class LogOutController : Controller
     {
         private readonly SignInManager<AdminUser> _userManager;

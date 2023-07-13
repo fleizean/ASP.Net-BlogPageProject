@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Blog_Project.Models;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 /*  using MailKit.Net.Smtp;
@@ -16,7 +18,8 @@ using MimeKit;*/
 
 namespace Blog_Project.Controllers
 {
-	public class ProfileController : Controller
+    [Authorize(Roles = "Admin")]
+    public class ProfileController : Controller
 	{
 		private readonly UserManager<AdminUser> _userManager;
 

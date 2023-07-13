@@ -61,6 +61,8 @@
     <None Remove="Views\Profile\" />
     <None Remove="Views\Shared\Components\SocialMediaList\" />
     <None Remove="Views\SocialMedia\" />
+    <None Remove="Views\Shared\Components\AdminTopNavBar\" />
+    <None Remove="ViewComponents\Dashboard\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Default\" />
@@ -93,6 +95,8 @@
     <Folder Include="Views\Profile\" />
     <Folder Include="Views\Shared\Components\SocialMediaList\" />
     <Folder Include="Views\SocialMedia\" />
+    <Folder Include="Views\Shared\Components\AdminTopNavBarList\" />
+    <Folder Include="ViewComponents\Dashboard\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\userimage\" />
