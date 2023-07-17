@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,7 +31,7 @@ namespace Blog_Project
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Context>();
-            services.AddIdentity<AdminUser, AdminUserRole>().AddEntityFrameworkStores<Context>();
+            services.AddIdentity<AdminUser, AdminUserRole>().AddTokenProvider<DataProtectorTokenProvider<AdminUser>>(TokenOptions.DefaultProvider).AddEntityFrameworkStores<Context>();
             services.AddControllersWithViews();
 
             services.AddMvc(config =>

@@ -1,10 +1,13 @@
 ﻿<Properties StartupConfiguration="{F808CA78-45F2-407D-8C94-3CD8C1875650}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Blog_Project/Views/Shared/Components/SocialMediaList/Default.cshtml">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Blog_Project/Views/ForgotPassword/Index.cshtml">
     <Files>
-      <File FileName="Blog_Project/Views/SocialMedia/Index.cshtml" />
-      <File FileName="Blog_Project/Views/SocialMedia/EditSocialMedia.cshtml" />
-      <File FileName="Blog_Project/Views/Shared/Components/SocialMediaList/Default.cshtml" Line="15" Column="1" />
+      <File FileName="Blog_Project/Views/Default/Index.cshtml" />
+      <File FileName="Blog_Project/Views/Default/NavbarPartial.cshtml" Line="5" Column="106" />
+      <File FileName="Blog_Project/Controllers/ForgotPasswordController.cs" Line="32" Column="2" />
+      <File FileName="Blog_Project/Views/ForgotPassword/Index.cshtml" Line="138" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,14 +16,10 @@
             <Node name="Blog_Project" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Shared" expanded="True">
-                  <Node name="Components" expanded="True">
-                    <Node name="SocialMediaList" expanded="True">
-                      <Node name="Default.cshtml" selected="True" />
-                    </Node>
-                  </Node>
-                </Node>
-                <Node name="SocialMedia" expanded="True" />
+                <Node name="Default" expanded="True" />
+                <Node name="Experience" expanded="True" />
+                <Node name="ForgotPassword" expanded="True" selected="True" />
+                <Node name="Profile" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -28,10 +27,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.Blog__Project PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
