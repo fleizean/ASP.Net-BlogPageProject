@@ -2,24 +2,19 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Blog_Project/Views/ForgotPassword/Index.cshtml">
-    <Files>
-      <File FileName="Blog_Project/Views/Default/Index.cshtml" />
-      <File FileName="Blog_Project/Views/Default/NavbarPartial.cshtml" Line="5" Column="106" />
-      <File FileName="Blog_Project/Controllers/ForgotPasswordController.cs" Line="32" Column="2" />
-      <File FileName="Blog_Project/Views/ForgotPassword/Index.cshtml" Line="138" Column="21" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Blog_Project" expanded="True">
             <Node name="Blog_Project" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Default" expanded="True" />
-                <Node name="Experience" expanded="True" />
-                <Node name="ForgotPassword" expanded="True" selected="True" />
+                <Node name="Login" expanded="True" />
+                <Node name="PasswordChange" expanded="True" />
                 <Node name="Profile" expanded="True" />
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>

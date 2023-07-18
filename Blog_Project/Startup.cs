@@ -33,6 +33,10 @@ namespace Blog_Project
             services.AddDbContext<Context>();
             services.AddIdentity<AdminUser, AdminUserRole>().AddTokenProvider<DataProtectorTokenProvider<AdminUser>>(TokenOptions.DefaultProvider).AddEntityFrameworkStores<Context>();
             services.AddControllersWithViews();
+            services.Configure<DataProtectionTokenProviderOptions>(options => // şifre sıfırlama bağlantısının süresi yani tokenin
+            {
+                options.TokenLifespan = TimeSpan.FromHours(3);
+            });
 
             services.AddMvc(config =>
             {
