@@ -45,10 +45,14 @@ namespace Blog_Project.Controllers
                 ViewBag.v3 = "Profilindeki düzenlenmemiş alanları kontrol etmek için aşağıdaki butonu kullan!";
             }
 
-            ////
-            ///
+            // -> ----------------- <- //
 
+            
             Context c = new Context();
+
+            ViewBag.v9 = "";
+            ViewBag.v8 = c.Educations.Count() + c.Awards.Count() + c.Experiences.Count() + c.Interests.Count() + c.Skills.Count();
+
             ViewBag.v4 = c.SocialMedias.Count();
             ViewBag.v5 = c.Interests.Count();
             ViewBag.v6 = c.Awards.Count();

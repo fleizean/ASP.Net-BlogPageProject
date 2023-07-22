@@ -110,18 +110,20 @@
                         <!-- /Logo -->
                         <h4 class="mb-2">Hoş geldin! 👋</h4>
                         <p class="mb-4">Lütfen Admin paneline ulaşmak için giriş yapınız.</p>
-
                         <form id="formAuthentication" class="mb-3" method="post">
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
+                                <label for="email" class="form-label">Username</label>
                                 <input type="text"
                                        class="form-control"
                                        id="Username"
                                        name="Username"
                                        placeholder="Kullanıcı adını giriniz"
                                        autofocus />
+                                <span asp-validation-for="Username" class="text-danger"></span>
                             </div>
+
                             <div class="mb-3 form-password-toggle">
+
                                 <div class="d-flex justify-content-between">
                                     <label class="form-label" for="Password">Şifreniz</label>
                                     <a href="/PasswordChange/ForgotPassword/">
@@ -137,6 +139,7 @@
                                            aria-describedby="Password" />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
+                                <span asp-validation-for="Password" class="text-danger"></span>
                             </div>
                             <div class="mb-3">
                                 <button class="btn btn-primary d-grid w-100" type="submit">Giriş Yap</button>
@@ -154,6 +157,31 @@
             </div>
         </div>
     </div>
+    <script>// Sayfa yüklendiğinde localStorage'dan verileri alıp formu doldur
+        document.getElementById("formAuthentication").addEventListener("submit", function () {
+            var formData = new FormData(this);
+            for (var pair of formData.entries()) {
+                sessionStorage.setItem(pair[0], pair[1]);
+            }
+        });
+
+        // Sayfa yüklendiğinde sessionStorage'dan verileri alıp formu doldur
+        window.onload = function () {
+            var form = document.getElementById("formAuthentication");
+            for (var i = 0; i < form.elements.length; i++) {
+                var element = form.elements[i];
+                var savedValue = sessionStorage.getItem(element.name);
+                if (savedValue) {
+                    element.value = savedValue;
+                }
+            }
+        };
+
+        // Başka bir sayfaya geçildiğinde sessionStorage'ı temizle
+        window.onbeforeunload = function () {
+            sessionStorage.clear();
+        };
+    </script>
 
     <script src="~/sneat/assets/vendor/libs/jquery/jquery.js"></script>
     <script src="~/sneat/assets/vendor/libs/popper/popper.js"></script>

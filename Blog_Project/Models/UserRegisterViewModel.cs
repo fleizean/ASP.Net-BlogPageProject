@@ -6,23 +6,27 @@ namespace Blog_Project.Models
 {
 	public class UserRegisterViewModel
 	{
-        [Required(ErrorMessage = "Lütfen Adınızı Girin")]
+        [Required(ErrorMessage = "Ad boş geçilemez")]
+        [MinLength(2, ErrorMessage = "Minimum 2 karakterlik giriş yapmalısınız")]
+        [MaxLength(13)]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Lütfen Soyadınızı Girin")]
+        [Required(ErrorMessage = "Soyad boş geçilemez")]
+        [MinLength(2, ErrorMessage = "Minimum 2 karakterlik giriş yapmalısınız")]
+        [MaxLength(13)]
         public string Surname { get; set; }
-        [Required(ErrorMessage = "Lütfen Kullanıcı Adını Girin")]
         public string ImageUrl { get; set; }
         public IFormFile Picture { get; set; }
-        [Required(ErrorMessage = "Lütfen Resim Url Girin")]
+        [Required(ErrorMessage = "Resim boş geçilemez")]
         public string UserName { get; set; }
-        [Required(ErrorMessage = "Lütfen Şifreyi Girin")]
+        [Required(ErrorMessage = "Şifre boş geçilemez")]
         public string Password { get; set; }
-        [Required(ErrorMessage = "Lütfen Şifreyi Tekrar Girin")]
-        [Compare("Password", ErrorMessage = "Şifreler Uyumlu Değil")]
+        [Required(ErrorMessage = "Tekrar Şifre boş geçilemez")]
+        [Compare("Password", ErrorMessage = "Şifreler uyumlu olmalı")]
         public string ConfirmPassword { get; set; }
-        [Required(ErrorMessage = "Lütfen Maili Girin")]
+        [Required(ErrorMessage = "Email boş geçilemez")]
+        [RegularExpression(@"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$", ErrorMessage = "Geçerli bir e-posta adresi giriniz")]
         public string Mail { get; set; }
-        [Range(typeof(bool), "true", "true", ErrorMessage = "Lütfen Gizlilik Sözleşmesini Kabul Edin.")]
+        [Range(typeof(bool), "true", "true", ErrorMessage = "Gizlilik Sözleşmesi kabul edilmeli")]
         public bool Privacy { get; set; }
     }
 }

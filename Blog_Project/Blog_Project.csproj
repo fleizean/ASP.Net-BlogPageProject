@@ -19,6 +19,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12" />
     <PackageReference Include="MailKit" Version="4.1.0" />
+    <PackageReference Include="JWT" Version="10.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
@@ -63,6 +65,9 @@
     <None Remove="Views\SocialMedia\" />
     <None Remove="Views\Shared\Components\AdminTopNavBar\" />
     <None Remove="ViewComponents\Dashboard\" />
+    <None Remove="Repository\" />
+    <None Remove="Repository\JwtToken\" />
+    <None Remove="Repository\Encription\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Default\" />
@@ -97,6 +102,9 @@
     <Folder Include="Views\SocialMedia\" />
     <Folder Include="Views\Shared\Components\AdminTopNavBarList\" />
     <Folder Include="ViewComponents\Dashboard\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Repository\JwtToken\" />
+    <Folder Include="Repository\Encription\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\userimage\" />

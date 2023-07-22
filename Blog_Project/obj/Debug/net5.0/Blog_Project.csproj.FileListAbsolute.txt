@@ -129,3 +129,7 @@
 /Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/obj/Debug/net5.0/Razor/Views/Shared/Components/AdminTopNavBarList/Default.cshtml.g.cs
 /Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/obj/Debug/net5.0/Razor/Views/PasswordChange/ForgotPassword.cshtml.g.cs
 /Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/obj/Debug/net5.0/Razor/Views/PasswordChange/ResetPassword.cshtml.g.cs
+/Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/bin/Debug/net5.0/JWT.dll
+/Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/bin/Debug/net5.0/System.Text.Encodings.Web.dll
+/Users/fleizean/Desktop/Self-Project/Asp.Net/BlogWeb_Project/Blog_Project/Blog_Project/bin/Debug/net5.0/System.Text.Json.dll

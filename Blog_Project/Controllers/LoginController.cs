@@ -35,6 +35,7 @@ namespace Blog_Project.Controllers
                 var result = await _signInManager.PasswordSignInAsync(p.Username, p.Password, true, true);
                 if (result.Succeeded)
                 {
+
                     return RedirectToAction("Index", "Dashboard");
                 }
                 else

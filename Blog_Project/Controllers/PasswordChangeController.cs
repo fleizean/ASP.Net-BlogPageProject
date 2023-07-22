@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Blog_Project.Models;
+using Blog_Project.Repository;
+using Blog_Project.Repository.JwtToken;
 using EntityLayer.Concrete;
 using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Authorization;
@@ -39,16 +42,21 @@ namespace Blog_Project.Controllers
                 ModelState.AddModelError("", "Bu e-posta ile ilişkili kullanıcı bulunamadı.");
                 return View();
             }
-            string passwordResetToken = await _userManager.GeneratePasswordResetTokenAsync(user); // token oluşturacak
+            // string passwordResetToken = await _userManager.GeneratePasswordResetTokenAsync(user); // token oluşturacak
+
+            var jwtHelper = new JwtHelper();
+
+            var passwordResetToken = jwtHelper.CreateToken(user);
+
             var passwordResetTokenLink = Url.Action("ResetPassword", "PasswordChange", new
             {
                 userId = user.Id,
-                token = passwordResetToken
+                token = passwordResetToken.Token
             }, HttpContext.Request.Scheme);
 
             MimeMessage mimeMessage = new MimeMessage();
 
-            MailboxAddress mailboxAddressFrom = new MailboxAddress("Flei", "ayarlanmali@gmail.com");
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("Flei", "ayarlanmadicunkugithub");
             mimeMessage.From.Add(mailboxAddressFrom);
 
             MailboxAddress mailboxAddressTo = new MailboxAddress("User", forgotPasswordViewModel.Mail);
@@ -63,7 +71,7 @@ namespace Blog_Project.Controllers
 
             SmtpClient client = new SmtpClient();
             client.Connect("smtp.gmail.com", 587, false);
-            client.Authenticate("ayarlanmali@gmail.com", "ayarlanmali");
+            client.Authenticate("ayarlanmadicunkugithub", "ayarlanmadicunkugithub");
             client.Send(mimeMessage);
             client.Disconnect(true);
 
@@ -77,12 +85,17 @@ namespace Blog_Project.Controllers
         {
             TempData["userid"] = userid;
             TempData["token"] = token;
-
-
+            var tokenHandler = new TokenHandler();
             
+            bool isValid = tokenHandler.IsTokenExpired(token);
+            if (!isValid)
+            {
+                return RedirectToAction("Index", "Login"); 
+            }
 
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> ResetPassword(ResetPasswordViewModel resetPasswordViewModel)
         {
@@ -91,7 +104,8 @@ namespace Blog_Project.Controllers
 
             if (userid == null || token == null)
             {
-
+                ModelState.AddModelError("", "Bir sıkıntı oluştu ve bulunamadı.");
+                return View();
             }
             var user = await _userManager.FindByIdAsync(userid.ToString());
             var result = await _userManager.ResetPasswordAsync(user, token.ToString(), resetPasswordViewModel.Password);
